@@ -3,12 +3,18 @@ import "./Product.scss";
 const Product = (props) => {
   const { product, orderedProducts, onProductSelect } = props;
   const { name, price, description, imageUrl } = product;
+
   const handleButtonClick = () => {
     onProductSelect(product);
   };
+
   const isOrdered = orderedProducts.some(
     (orderedProduct) => orderedProduct.id === product.id
   );
+
+  const orderCount = orderedProducts.filter(
+    (orderedProduct) => orderedProduct.id === product.id
+  ).length;
 
   return (
     <article
@@ -33,7 +39,7 @@ const Product = (props) => {
               isOrdered
                 ? {
                     color: "white",
-                    baground: "#8ea604",
+                    background: "#8ea604",
                     fontSize: "16px",
                   }
                 : {}

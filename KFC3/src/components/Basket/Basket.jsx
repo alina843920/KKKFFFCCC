@@ -1,35 +1,37 @@
 import BasketItem from "../BasketItem/BasketItem";
-import Product from "../Product/Product";
-import { groupBy } from "../utils";
 import "./Basket.scss";
+import { groupBy } from "../../utils";
 
-const Bansket = (props) => {
+const Basket = (props) => {
   const { orderedProducts, onProductRemove } = props;
+
   const orderCount = orderedProducts.length;
+
   const totalCost = orderedProducts.reduce(
-    (acc, orderedProducts) => acc + orderedProducts.price,
+    (acc, orderedProduct) => acc + orderedProduct.price,
     0
   );
 
   const groupedOrderProducts = Object.entries(
-    groupBy(orderedProducts, (product) => product.id)
+    groupBy(orderedProducts, (product) => product.name)
   );
 
   const handleProductRemove = (orderedProduct) => {
     onProductRemove(orderedProduct);
   };
+
   return (
     <div className="basket">
       <header>
         <h5>
           <span>Basket</span>
-          <span>({orderCount})</span>
+          <span>({orderCount} products)</span>
         </h5>
         <button>X</button>
       </header>
       <div>
         <ul>
-          {orderedProducts.map(([name, orderedProducts]) => (
+          {groupedOrderProducts.map(([name, orderedProducts]) => (
             <BasketItem
               orderCount={orderedProducts.length}
               orderedProduct={orderedProducts[0]}
@@ -39,9 +41,10 @@ const Bansket = (props) => {
         </ul>
       </div>
       <footer>
-        <button>Order and Pay({totalCost.toFixed(2)})</button>
+        <button>Order and Pay ({totalCost.toFixed(2)})</button>
       </footer>
     </div>
   );
 };
-export default Bansket;
+
+export default Basket;

@@ -1,3 +1,5 @@
+/* https://pastebin.com/St87HwsZ */
+
 .product {
   flex: 1 1 350px;
   display: flex;
@@ -36,8 +38,9 @@
       align-items: center;
       justify-content: space-between;
 
+      /* https://pastebin.com/gSUQ8YSB */
       button {
-        background-color: #f4f6e6;
+        background: #f4f6e6;
         width: 40px;
         height: 40px;
         border-radius: 6px;
