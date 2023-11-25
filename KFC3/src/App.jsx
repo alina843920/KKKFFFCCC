@@ -4,6 +4,9 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import products from "./mocks/products.json";
 import Product from "./components/Product/Product";
+
+import ProductModal from "./components/ProductModal/ProductModal";
+
 import Basket from "./components/Basket/Basket";
 
 function App() {

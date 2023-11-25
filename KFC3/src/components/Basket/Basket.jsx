@@ -1,7 +1,6 @@
 import BasketItem from "../BasketItem/BasketItem";
 import "./Basket.scss";
-import { groupBy } from "../../utils";
-
+import { groupBy } from "../utils";
 const Basket = (props) => {
   const { orderedProducts, onProductRemove } = props;
 
