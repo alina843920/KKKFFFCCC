@@ -4,16 +4,16 @@ const ProductModal = (props) => {
   const { onClose, product, onAddToBasket } = props;
   const [quantity, setQuantity] = useState(1);
 
-  const handleAddToBasket = () => {
+  const AddToBasket = () => {
     onAddToBasket(product, quantity);
     onClose();
   };
 
-  const handleIncrementQuantity = () => {
+  const IncrementQuantity = () => {
     setQuantity(quantity + 1);
   };
 
-  const handleDecrementQuantity = () => {
+  const DecrementQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
@@ -31,12 +31,11 @@ const ProductModal = (props) => {
           <p>{product.description}</p>
           <p>{product.price}</p>
           <div>
-            <label htmlFor="quantity">Ilość: </label>
-            <button onClick={handleDecrementQuantity}>-</button>
+            <button onClick={DecrementQuantity}>-</button>
             <span>{quantity}</span>
-            <button onClick={handleIncrementQuantity}>+</button>
+            <button onClick={IncrementQuantity}>+</button>
           </div>
-          <button onClick={handleAddToBasket}>Dodaj do koszyka</button>
+          <button onClick={AddToBasket}>Add</button>
         </div>
       )}
     </div>
