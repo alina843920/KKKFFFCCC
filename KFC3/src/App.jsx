@@ -1,12 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React, { useState } from "react";
 import products from "./mocks/products.json";
 import Product from "./components/Product/Product";
 import Basket from "./components/Basket/Basket";
 import ProductModal from "./components/ProductModal/ProductModal";
-function App() {
+
+import "./App.css";
+
+const App = () => {
   const [orderedProducts, setOrderedProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,6 +25,16 @@ function App() {
   const handleAddToBasket = (product, quantity) => {
     const newProduct = { ...product, quantity };
     setOrderedProducts([...orderedProducts, newProduct]);
+  };
+
+  const handleUpdateBasketQuantity = (product, newQuantity) => {
+    const updatedProducts = orderedProducts.map((p) => {
+      if (p.id === product.id) {
+        return { ...p, quantity: newQuantity };
+      }
+      return p;
+    });
+    setOrderedProducts(updatedProducts);
   };
 
   const handleModalClose = () => {
@@ -59,10 +69,11 @@ function App() {
           onClose={handleModalClose}
           product={selectedProduct}
           onAddToBasket={handleAddToBasket}
+          onUpdateBasketQuantity={handleUpdateBasketQuantity}
         />
       )}
     </>
   );
-}
+};
 
 export default App;
