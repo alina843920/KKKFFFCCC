@@ -1,5 +1,3 @@
-// components/BasketItem/BasketItem.jsx
-
 import React from "react";
 import "./BasketItem.scss";
 

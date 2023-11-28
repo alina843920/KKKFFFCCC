@@ -12,7 +12,7 @@ const Product = (props) => {
     (orderedProduct) => orderedProduct.id === product.id
   );
 
-  const orderCount = orderedProducts.filter(
+  const quantity = orderedProducts.filter(
     (orderedProduct) => orderedProduct.id === product.id
   ).length;
 
@@ -45,7 +45,7 @@ const Product = (props) => {
                 : {}
             }
           >
-            {isOrdered ? orderCount : "+"}
+            {isOrdered ? quantity : "+"}
           </button>
         </footer>
       </div>
