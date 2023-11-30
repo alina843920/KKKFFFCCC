@@ -24,4 +24,16 @@
   & > footer {
     background: fixed;
   }
+  .close-button {
+    background: #f4f6e6;
+    color: #8ea604;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  footer > button {
+    background: #f4f6e6;
+    color: #8ea604;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }

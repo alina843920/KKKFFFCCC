@@ -30,6 +30,28 @@
     cursor: pointer;
   }
 
+  .heart-button {
+    background: #8ea604;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 17px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: darken(#8ea604, 10%);
+    }
+
+    &:active {
+      background: lighten(#8ea604, 10%);
+    }
+  }
+
   .decrement-button,
   .increment-button,
   .add-button {

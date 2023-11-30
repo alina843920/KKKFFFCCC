@@ -11,4 +11,10 @@
   & > .actions {
     display: flex;
   }
+  .remove-button {
+    background: #f4f6e6;
+    color: #8ea604;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }

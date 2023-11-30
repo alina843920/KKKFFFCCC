@@ -1,6 +1,8 @@
 import BasketItem from "../BasketItem/BasketItem";
 import "./Basket.scss";
 import { groupBy } from "../utils";
+import { ImCross } from "react-icons/im";
+
 const Basket = (props) => {
   const { orderedProducts, onProductRemove } = props;
 
@@ -26,7 +28,9 @@ const Basket = (props) => {
           <span>Basket</span>
           <span>({orderCount} products)</span>
         </h5>
-        <button>X</button>
+        <button className="close-button">
+          <ImCross />
+        </button>
       </header>
       <div>
         <ul>

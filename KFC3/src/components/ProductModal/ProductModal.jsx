@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ProductModal.scss";
+import { FaHeart } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 const ProductModal = (props) => {
   const { onClose, product, onAddToBasket, onUpdateBasketQuantity } = props;
   const [quantity, setQuantity] = useState(1);
@@ -24,7 +26,10 @@ const ProductModal = (props) => {
   return (
     <div className="product-modal">
       <button className="close-button" onClick={onClose}>
-        X
+        <ImCross />
+      </button>
+      <button className="heart-button">
+        <FaHeart />
       </button>
       {product && (
         <div>

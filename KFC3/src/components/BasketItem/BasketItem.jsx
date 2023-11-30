@@ -17,7 +17,11 @@ const BasketItem = (props) => {
         <span>{price}</span>
       </div>
       <div className="actions">
-        <button type="button" onClick={handleButtonClick}>
+        <button
+          className="remove-button"
+          type="button"
+          onClick={handleButtonClick}
+        >
           Remove
         </button>
       </div>
